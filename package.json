@@ -1,14 +1,10 @@
 {
-    "name": "http-operators",
+    "name": "http-operators-internal",
     "version": "0.0.0",
     "main": "operators/index.ts",
+    "license": "MIT",
     "scripts": {
-        "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build",
-        "test": "ng test",
-        "lint": "ng lint",
-        "e2e": "ng e2e"
+        "build": "tsc -p operators"
     },
     "private": true,
     "dependencies": {

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
  */
 export const shareAndCache = (cacheKey: string) => <T>(source: Observable<T>) => {
     // Check if we have a valid cached value
-    let cachedValue: T = null;
+    let cachedValue: T | null = null;
     try {
         cachedValue = JSON.parse(localStorage[cacheKey]);
     } catch (parseException) {}

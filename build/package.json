@@ -1,0 +1,14 @@
+{
+    "name": "http-operators",
+    "version": "0.0.1",
+    "module": "index.js",
+    "license": "MIT",
+    "private": false,
+    "dependencies": {
+        "rxjs": "^6.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/stephenfluin/http-operators"
+    }
+}
