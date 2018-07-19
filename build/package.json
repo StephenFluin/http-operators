@@ -1,10 +1,10 @@
 {
     "name": "http-operators",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "module": "index.js",
     "license": "MIT",
     "private": false,
-    "dependencies": {
+    "peerDependencies": {
         "rxjs": "^6.0.0"
     },
     "repository": {
