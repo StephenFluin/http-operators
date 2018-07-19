@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { shareAndCache } from '../operators/sharedCached';
-import { keepFresh } from '../operators/keepFresh.operator';
-import { retryExponentialBackoff } from '../operators/retryExponentialBackoff.operator';
+import { keepFresh, shareAndCache, retryExponentialBackoff } from '../../operators/';
 
 export interface GitHubSearch {
     items: { name: string; description: string }[];
@@ -22,10 +20,11 @@ export class AppComponent {
         this.repos = http.get<GitHubSearch>(path).pipe(
             map(results => results.items),
 
+            // Retry at most 5 times, starting with a 1 second wait
             retryExponentialBackoff(5, 1000),
 
-            // Keep Fresh
-            // keepFresh(10000),
+            // Keep Fresh every 5 minutes
+            keepFresh(1000 * 60 * 5),
 
             // Cache
             shareAndCache('repos'),

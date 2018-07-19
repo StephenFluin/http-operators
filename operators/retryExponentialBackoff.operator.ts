@@ -36,7 +36,7 @@ export const retryExponentialBackoff = (
                     },
                     error(err: any) {
                         if (count <= maxTries) {
-                            subscription.add(scheduler.schedule(subscribe, initialWait * Math.pow(count++, 2)));
+                            subscription.add(scheduler.schedule(subscribe, initialWait * Math.pow(2, count++)));
                         }
                     },
                     complete() {
