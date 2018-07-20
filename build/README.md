@@ -3,7 +3,7 @@ I'm starting work on a collection of useful RxJS operators. These operators are 
 
 # How to use
 1. Import the operator you want to use
-1. Use it
+1. Use it in an Observable's `pipe` sequence
 1. Profit
 
 # Example
